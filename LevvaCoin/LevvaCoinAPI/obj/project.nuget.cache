@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "USYjPZEGYJvnKr95yFhbl/c9f5bxACVNObaX44uBWW6zpLInm2HUS+31Z8XjbDlLyVvf8bbS6ZgQ74+742qJ6Q==",
+  "dgSpecHash": "hCUSUfxUehqrkrkHq1ONkTG32gNbiqmza2IXQXTLZkU+gB5CM1LSNMpdalRAtz1PG7VntbyCT+nShI6/A/fAhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\LevvaCoin\\LevvaCoinAPI\\LevvaCoinAPI.csproj",
+  "projectFilePath": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\Levva.Newbies.Coins\\LevvaCoin\\LevvaCoinAPI\\LevvaCoinAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LucasFerreiradeOlive\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\LucasFerreiradeOlive\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",

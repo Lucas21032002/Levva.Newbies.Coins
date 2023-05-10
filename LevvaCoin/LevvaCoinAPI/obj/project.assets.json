@@ -11187,11 +11187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\LevvaCoin\\LevvaCoinAPI\\LevvaCoinAPI.csproj",
+      "projectUniqueName": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\Levva.Newbies.Coins\\LevvaCoin\\LevvaCoinAPI\\LevvaCoinAPI.csproj",
       "projectName": "LevvaCoinAPI",
-      "projectPath": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\LevvaCoin\\LevvaCoinAPI\\LevvaCoinAPI.csproj",
+      "projectPath": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\Levva.Newbies.Coins\\LevvaCoin\\LevvaCoinAPI\\LevvaCoinAPI.csproj",
       "packagesPath": "C:\\Users\\LucasFerreiradeOlive\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\LevvaCoin\\LevvaCoinAPI\\obj\\",
+      "outputPath": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\Levva.Newbies.Coins\\LevvaCoin\\LevvaCoinAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LucasFerreiradeOlive\\AppData\\Roaming\\NuGet\\NuGet.Config",
