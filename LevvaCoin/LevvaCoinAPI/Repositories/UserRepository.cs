@@ -11,54 +11,31 @@ namespace LevvaCoinAPI.Repositories
         public UserRepository(LevvaCoinsDbContext context) {
             _context = context;
         }
-        public Task<User> AddAsync(User obj)
+
+        public void Create(User user)
         {
-            throw new NotImplementedException();
+            _context.User.Add(user);
         }
 
-        public Task<int> AddRangeAsync(IEnumerable<User> entities)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var user = _context.User.Find(id);
+            _context.User.Remove(user);
         }
 
-        public void Dispose()
+        public User Get(int id)
         {
-            throw new NotImplementedException();
+            return _context.User.Find(id);
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync()
+        public List<User> GetAll()
         {
-            return await _context.Users.ToListAsync();
+            return _context.User.ToList();
         }
 
-        public Task<User> GetByIdAsyc(object id)
+        public void Update(User user)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> RemoveAsync(object id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> RemoveAsync(User id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> RemoveRangeAsync(IEnumerable<User> entities)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> UpdateAsync(User obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> UpdateRangeAsync(IEnumerable<User> entities)
-        {
-            throw new NotImplementedException();
+            _context.User.Update(user);
         }
     }
 }
