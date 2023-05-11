@@ -1,5 +1,5 @@
 ﻿using LevvaCoinAPI.Domain.Models;
-using LevvaCoinAPI.Interfaces;
+using LevvaCoinAPI.Logic.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LevvaCoinAPI.Controllers
@@ -15,7 +15,7 @@ namespace LevvaCoinAPI.Controllers
         }
 
         [HttpGet(Name = "list")]
-        public async Task<IEnumerable<User>> Get()
+        public async Task<IEnumerable<UserDto>> Get()
         {
             return await _userService.list();
         }

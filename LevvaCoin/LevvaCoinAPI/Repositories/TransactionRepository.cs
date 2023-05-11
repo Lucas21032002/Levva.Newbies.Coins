@@ -13,7 +13,7 @@ namespace LevvaCoinAPI.Repositories
             _context = context;
         }
 
-        public void Create(Transaction transaction)
+        public void Create(TransactionDto transaction)
         {
             _context.Transaction.Add(transaction);
             _context.SaveChanges();
@@ -26,17 +26,17 @@ namespace LevvaCoinAPI.Repositories
             _context.SaveChanges();
         }
 
-        public Transaction Get(int id)
+        public TransactionDto Get(int id)
         {
             return _context.Transaction.Find(id);
         }
 
-        public List<Transaction> GetAll()
+        public List<TransactionDto> GetAll()
         {
             return _context.Transaction.ToList();
         }
 
-        public void Update(Transaction transaction)
+        public void Update(TransactionDto transaction)
         {
             _context.Transaction.Update(transaction);
             _context.SaveChanges();

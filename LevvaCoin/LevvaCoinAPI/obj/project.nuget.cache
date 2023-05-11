@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hCUSUfxUehqrkrkHq1ONkTG32gNbiqmza2IXQXTLZkU+gB5CM1LSNMpdalRAtz1PG7VntbyCT+nShI6/A/fAhQ==",
+  "dgSpecHash": "FhGSRwT1sUkg3clg56/6odd6GmCeGZyhadg5YefCeaFPkDdkSV1ba79MxR+5zAtlRwsKkJexLk1ZaqpsICTkNw==",
   "success": true,
   "projectFilePath": "C:\\Users\\LucasFerreiradeOlive\\Desktop\\Programa Newbies\\Levva.Newbies.Coins\\LevvaCoin\\LevvaCoinAPI\\LevvaCoinAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\LucasFerreiradeOlive\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\LucasFerreiradeOlive\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\LucasFerreiradeOlive\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\LucasFerreiradeOlive\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\LucasFerreiradeOlive\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

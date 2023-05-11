@@ -1,4 +1,5 @@
 ﻿using LevvaCoinAPI.Domain.Models;
+using LevvaCoinAPI.Logic.Dto;
 
 namespace LevvaCoinAPI.Interfaces
 {

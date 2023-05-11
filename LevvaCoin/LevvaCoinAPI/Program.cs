@@ -1,7 +1,9 @@
 using LevvaCoinAPI.Database;
 using LevvaCoinAPI.Interfaces;
+using LevvaCoinAPI.Logic.Interfaces;
+using LevvaCoinAPI.Logic.MapperProfiles;
+using LevvaCoinAPI.Logic.Services;
 using LevvaCoinAPI.Repositories;
-using LevvaCoinAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +32,7 @@ builder.Services.AddDbContext<LevvaCoinsDbContext>(options =>
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddAutoMapper(typeof(DefaultMapper));
 
 var app = builder.Build();
 

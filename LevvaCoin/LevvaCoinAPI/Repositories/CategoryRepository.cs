@@ -12,7 +12,7 @@ namespace LevvaCoinAPI.Repositories
             _context = context;
         }
 
-        public void Create(Category category)
+        public void Create(CategoryDto category)
         {
             _context.Category.Add(category);
             _context.SaveChanges();
@@ -25,17 +25,17 @@ namespace LevvaCoinAPI.Repositories
             _context.SaveChanges();
         }
 
-        public Category Get(int id)
+        public CategoryDto Get(int id)
         {
             return _context.Category.Find(id);
         }
 
-        public List<Category> GetAll()
+        public List<CategoryDto> GetAll()
         {
             return _context.Category.ToList();
         }
 
-        public void Update(Category category)
+        public void Update(CategoryDto category)
         {
             _context.Category.Update(category);
             _context.SaveChanges();
