@@ -24,6 +24,7 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 var connectionString = configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddAutoMapper(typeof(DefaultMapper));
 
 builder.Services.AddDbContext<LevvaCoinsDbContext>(options =>
 {
@@ -31,8 +32,12 @@ builder.Services.AddDbContext<LevvaCoinsDbContext>(options =>
 });
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddAutoMapper(typeof(DefaultMapper));
+builder.Services.AddScoped<ITransactionService, TransactionServices>();
+builder.Services.AddScoped<ICategoryService, CategoryServices>();
 
 var app = builder.Build();
 
