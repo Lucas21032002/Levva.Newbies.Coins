@@ -606,3 +606,5 @@ C:\Users\LucasFerreiradeOlive\Desktop\Programa Newbies\Levva.Newbies.Coins\Levva
 C:\Users\LucasFerreiradeOlive\Desktop\Programa Newbies\Levva.Newbies.Coins\LevvaCoin\LevvaCoinAPI\obj\Debug\net6.0\LevvaCoinAPI.pdb
 C:\Users\LucasFerreiradeOlive\Desktop\Programa Newbies\Levva.Newbies.Coins\LevvaCoin\LevvaCoinAPI\obj\Debug\net6.0\LevvaCoinAPI.genruntimeconfig.cache
 C:\Users\LucasFerreiradeOlive\Desktop\Programa Newbies\Levva.Newbies.Coins\LevvaCoin\LevvaCoinAPI\obj\Debug\net6.0\ref\LevvaCoinAPI.dll
+C:\Users\LucasFerreiradeOlive\Desktop\Programa Newbies\Levva.Newbies.Coins\LevvaCoin\LevvaCoinAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\LucasFerreiradeOlive\Desktop\Programa Newbies\Levva.Newbies.Coins\LevvaCoin\LevvaCoinAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

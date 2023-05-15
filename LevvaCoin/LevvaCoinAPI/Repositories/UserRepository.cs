@@ -1,7 +1,6 @@
 ﻿using LevvaCoinAPI.Database;
 using LevvaCoinAPI.Domain.Models;
 using LevvaCoinAPI.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace LevvaCoinAPI.Repositories
 {
@@ -12,7 +11,7 @@ namespace LevvaCoinAPI.Repositories
             _context = context;
         }
 
-        public void Create(UserDto user)
+        public void Create(User user)
         {
             _context.User.Add(user);
             _context.SaveChanges();
@@ -25,17 +24,17 @@ namespace LevvaCoinAPI.Repositories
             _context.SaveChanges();
         }
 
-        public UserDto Get(int id)
+        public User Get(int id)
         {
             return _context.User.Find(id);
         }
 
-        public List<UserDto> GetAll()
+        public List<User> GetAll()
         {
             return _context.User.ToList();
         }
 
-        public void Update(UserDto user)
+        public void Update(User user)
         {
             _context.User.Update(user);
             _context.SaveChanges();
