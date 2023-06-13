@@ -32,7 +32,7 @@ namespace LevvaCoinAPI.Logic.Services
 
         public UserDto Get(int id)
         {
-            var user = _mapper.Map<UserDto>(_userRepository.Get(id));
+            var user = _mapper.Map<UserDto>(_userRepository.Get(id)); // Explicação sobre autoMapper
             return user;
         }
 

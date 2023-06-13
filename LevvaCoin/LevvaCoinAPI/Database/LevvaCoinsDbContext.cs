@@ -1,7 +1,7 @@
 ﻿using LevvaCoinAPI.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LevvaCoinAPI.Database
+namespace LevvaCoinAPI.Database // Pedir explicação pro thales.
 {
     public class LevvaCoinsDbContext : DbContext
     {

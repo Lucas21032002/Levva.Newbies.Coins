@@ -13,9 +13,11 @@ namespace LevvaCoinAPI.Logic.Dto
 
         [Column("email")]
         public string? Email { get; set; }
+        [Column("password")]
+        public string? Password { get; set; }
 
         //Relacionamento com outras tabelas
-        public virtual List<TransactionDto> Transactions { get; set; }
+        public virtual List<TransactionDto>? Transactions { get; set; }
 
     }
 }

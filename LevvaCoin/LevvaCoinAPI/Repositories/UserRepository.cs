@@ -13,8 +13,8 @@ namespace LevvaCoinAPI.Repositories
 
         public void Create(User user)
         {
-            _context.User.Add(user);
-            _context.SaveChanges();
+           _context.User.Add(user);
+           _context.SaveChanges();
         }
 
         public void Delete(int id)

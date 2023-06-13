@@ -12,6 +12,6 @@ namespace LevvaCoinAPI.Domain.Models
         public string? Description { get; set; }
 
         //Relacionamento com outras trabelas
-        public virtual List<Transaction> Transactions { get; set; }
+        public virtual List<Transaction>? Transactions { get; set; }
     }
 }

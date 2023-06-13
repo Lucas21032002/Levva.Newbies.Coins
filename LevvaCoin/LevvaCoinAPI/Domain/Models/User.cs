@@ -18,7 +18,7 @@ namespace LevvaCoinAPI.Domain.Models
         public string? Password { get; set; }
 
         //Relacionamento com outras tabelas
-        public virtual List<Transaction> Transactions { get; set; }
+        public virtual List<Transaction>? Transactions { get; set; }
 
     }
 }

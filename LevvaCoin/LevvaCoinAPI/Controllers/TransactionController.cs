@@ -14,27 +14,27 @@ namespace LevvaCoinAPI.Controllers
             _TransactionService = service;
         }
 
-        [HttpPost("Create")]
+        [HttpPost]
         public IActionResult Create(TransactionDto transaction)
         {
             _TransactionService.Create(transaction);
             return Created("", transaction);
         }
 
-        [HttpGet("Get")]
+        [HttpGet]
         public ActionResult<TransactionDto> Get(int id)
         {
             return _TransactionService.Get(id);
         }
 
-        [HttpPut("Att")]
+        [HttpPut]
         public IActionResult Update(TransactionDto transaction)
         {
             _TransactionService.Update(transaction);
             return Ok(transaction);
         }
 
-        [HttpDelete("Delete")]
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             _TransactionService.Delete(id);

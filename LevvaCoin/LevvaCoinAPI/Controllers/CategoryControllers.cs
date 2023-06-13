@@ -14,27 +14,27 @@ namespace LevvaCoinAPI.Controllers
             _CategoryService = service;
         }
 
-        [HttpPost("Create")]
+        [HttpPost]
         public IActionResult Create(CategoryDto category)
         {
             _CategoryService.Create(category);
             return Created("", category);
         }
 
-        [HttpGet("Get")]
+        [HttpGet]
         public ActionResult<CategoryDto> Get(int id)
         {
             return _CategoryService.Get(id);
         }
 
-        [HttpPut("Att")]
+        [HttpPut]
         public IActionResult Update(CategoryDto category)
         {
             _CategoryService.Update(category);
             return Ok(category);
         }
 
-        [HttpDelete("Delete")]
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             _CategoryService.Delete(id);
