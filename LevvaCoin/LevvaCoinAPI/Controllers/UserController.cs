@@ -26,6 +26,11 @@ namespace LevvaCoinAPI.Controllers
         {
            return _userService.Get(id);
         }
+        [HttpGet("list")]
+        public ActionResult<List<UserDto>> GetAll()
+        {
+            return _userService.GetAll();
+        }
 
         [HttpPut]
         public IActionResult Update(UserDto user)

@@ -1,5 +1,4 @@
 ﻿using LevvaCoinAPI.Domain.Enums;
-using LevvaCoinAPI.Domain.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
@@ -26,11 +25,11 @@ namespace LevvaCoinAPI.Logic.Dto
         [Column("categoryId")]
         public int? CategoryId { get; set; }
 
-        public virtual CategoryDto Category { get; set; }
+        public virtual CategoryDto? Category { get; set; }
 
         [Column("userId")]
         public int UserId { get; set; }
 
-        public virtual UserDto User { get; set; }
+        public virtual UserDto? User { get; set; }
     }
 }

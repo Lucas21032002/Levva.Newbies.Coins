@@ -1,5 +1,6 @@
 ﻿using LevvaCoinAPI.Logic.Dto;
 using LevvaCoinAPI.Logic.Interfaces;
+using LevvaCoinAPI.Logic.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LevvaCoinAPI.Controllers
@@ -25,6 +26,12 @@ namespace LevvaCoinAPI.Controllers
         public ActionResult<CategoryDto> Get(int id)
         {
             return _CategoryService.Get(id);
+        }
+
+        [HttpGet("list")]
+        public ActionResult<List<CategoryDto>> GetAll()
+        {
+            return _CategoryService.GetAll();
         }
 
         [HttpPut]

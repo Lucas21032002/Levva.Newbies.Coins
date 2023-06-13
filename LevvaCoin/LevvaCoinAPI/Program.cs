@@ -31,6 +31,17 @@ builder.Services.AddDbContext<LevvaCoinsDbContext>(options =>
     options.UseMySQL(connectionString);
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "levvacoins",
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:5173","http://localhost:5173")
+                          .AllowAnyHeader();
+                      }
+        );
+});
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -48,10 +59,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 //app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("levvacoins");
 
 app.Run();
