@@ -39,5 +39,10 @@ namespace LevvaCoinAPI.Repositories
             _context.User.Update(user);
             _context.SaveChanges();
         }
+
+        public User GetByEmailAndPassword(string email, string password)
+        {
+            return _context.User.FirstOrDefault(x => x.Email.Equals(email) && x.Password.Equals(password));
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace LevvaCoinAPI.Interfaces
         List<User> GetAll();
         void Update(User user);
         void Delete(int id);
+        User GetByEmailAndPassword(string email, string password);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LevvaCoinAPI.Logic.Dto;
 using LevvaCoinAPI.Logic.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LevvaCoinAPI.Controllers
@@ -15,6 +16,7 @@ namespace LevvaCoinAPI.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Create(UserDto user)
         {
             _userService.Create(user);
@@ -46,6 +48,17 @@ namespace LevvaCoinAPI.Controllers
             return Ok();
         }
 
+        [HttpPost("login")]
+        [AllowAnonymous]
+        public ActionResult<LoginDto> Login(LoginDto loginDto)
+        {
+            var login = _userService.Login(loginDto);
+
+            if (login == null)
+                return BadRequest("Usuário inválido");
+
+            return Ok(login);
+        }
 
     }
 

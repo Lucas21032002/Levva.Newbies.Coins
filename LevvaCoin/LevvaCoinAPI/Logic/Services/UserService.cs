@@ -3,6 +3,10 @@ using LevvaCoinAPI.Domain.Models;
 using LevvaCoinAPI.Interfaces;
 using LevvaCoinAPI.Logic.Dto;
 using LevvaCoinAPI.Logic.Interfaces;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace LevvaCoinAPI.Logic.Services
 {
@@ -10,13 +14,16 @@ namespace LevvaCoinAPI.Logic.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly IConfiguration _configuration;
         public UserService(
             IUserRepository repository,
-            IMapper mapper
+            IMapper mapper,
+            IConfiguration configuration
         )
         {
             _userRepository = repository;
             _mapper = mapper;
+            _configuration = configuration;
         }
 
         public void Create(UserDto user)
@@ -46,6 +53,36 @@ namespace LevvaCoinAPI.Logic.Services
         {
             var userAtt = _mapper.Map<User>(userDto);
             _userRepository.Update(userAtt);
+        }
+
+        public LoginDto Login(LoginDto loginDto)
+        {
+            var usuario = _userRepository.GetByEmailAndPassword(loginDto.Email, loginDto.Password);
+
+            if (usuario == null)
+                return null;
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_configuration.GetSection("Secret").Value);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, usuario.Email)
+                }),
+                Expires = DateTime.UtcNow.AddHours(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+
+            loginDto.Token = tokenHandler.WriteToken(token);
+            loginDto.Password = null;
+            loginDto.Username = usuario.Name;
+            loginDto.Email = usuario.Email;
+
+            return loginDto;
+
         }
     }
 }

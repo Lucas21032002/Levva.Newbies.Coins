@@ -10,5 +10,7 @@ namespace LevvaCoinAPI.Logic.Interfaces
         void Update(UserDto userDto);
         void Delete(int id);
 
+        LoginDto Login(LoginDto loginDto);
+
     }
 }
