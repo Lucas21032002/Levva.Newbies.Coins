@@ -20,6 +20,7 @@ namespace LevvaCoinAPI.Logic.Services
         public void Create(TransactionDto transaction)
         {
             var _transaction = _mapper.Map<Transaction>(transaction);
+            _transaction.Date = DateTime.Now;
             _repository.Create(_transaction);
         }
 
@@ -37,6 +38,7 @@ namespace LevvaCoinAPI.Logic.Services
         public List<TransactionDto> GetAll()
         {
             var transactions = _mapper.Map<List<TransactionDto>>(_repository.GetAll());
+            transactions.Reverse();
             return transactions;
         }
 

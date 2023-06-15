@@ -80,6 +80,7 @@ namespace LevvaCoinAPI.Logic.Services
             loginDto.Password = null;
             loginDto.Username = usuario.Name;
             loginDto.Email = usuario.Email;
+            loginDto.Id = usuario.Id;
 
             return loginDto;
 
