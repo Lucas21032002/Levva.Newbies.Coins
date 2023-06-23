@@ -17,11 +17,15 @@ namespace LevvaCoinAPI.Logic.Services
             _mapper = mapper;
         }
 
-        public void Create(TransactionDto transaction)
+        public TransactionDto Create(int userId, CreateTransactionDto transaction)
         {
             var _transaction = _mapper.Map<Transaction>(transaction);
+
+            _transaction.UserId = userId;
             _transaction.Date = DateTime.Now;
-            _repository.Create(_transaction);
+
+            var transactionCreated = _repository.Create(_transaction);
+            return _mapper.Map<TransactionDto>(_transaction);
         }
 
         public void Delete(int id)

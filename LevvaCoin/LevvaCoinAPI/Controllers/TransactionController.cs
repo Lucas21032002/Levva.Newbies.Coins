@@ -9,16 +9,21 @@ namespace LevvaCoinAPI.Controllers
     public class TransactionController : ControllerBase
     {
         private readonly ITransactionService _TransactionService;
-        public TransactionController(ITransactionService service)
+        private readonly ICategoryService _CategoryService;
+        public TransactionController(ITransactionService service, ICategoryService categoryService)
         {
             _TransactionService = service;
+            _CategoryService = categoryService;
         }
 
         [HttpPost]
-        public IActionResult Create(TransactionDto transaction)
+        public ActionResult<TransactionDto> Create(CreateTransactionDto transaction)
         {
-            _TransactionService.Create(transaction);
-            return Created("", transaction);
+            var userId = User.Identity.Name;
+            var category = _CategoryService.Get(transaction.CategoryId);
+            var transactionCreated =_TransactionService.Create(Convert.ToInt32(userId),transaction);
+            transactionCreated.Category = category;
+            return Created("", transactionCreated);
         }
 
         [HttpGet]

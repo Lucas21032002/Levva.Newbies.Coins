@@ -4,7 +4,7 @@ namespace LevvaCoinAPI.Interfaces
 {
     public interface ITransactionRepository
     {
-        void Create(Transaction transaction);
+        Transaction Create(Transaction transaction);
         Transaction Get(int id);
         List<Transaction> GetAll();
         void Update(Transaction transaction);

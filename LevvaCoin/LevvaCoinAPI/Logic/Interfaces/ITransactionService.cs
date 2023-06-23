@@ -4,7 +4,7 @@ namespace LevvaCoinAPI.Logic.Interfaces
 {
     public interface ITransactionService
     {
-        void Create(TransactionDto trasaction);
+        TransactionDto Create(int userId, CreateTransactionDto trasaction);
         TransactionDto Get(int id); //perguntar sobre síntaxe
         List<TransactionDto> GetAll();
         void Update(TransactionDto trasaction);

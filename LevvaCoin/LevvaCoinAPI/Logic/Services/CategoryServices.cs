@@ -17,10 +17,11 @@ namespace LevvaCoinAPI.Logic.Services
             _mapper = mapper;
         }
 
-        public void Create(CategoryDto category)
+        public CategoryDto Create(createCategoryDto category)
         {
             var _category = _mapper.Map<Category>(category);
-            _repository.Create(_category);
+            var categoryCreated = _repository.Create(_category);
+            return _mapper.Map<CategoryDto>(categoryCreated);
         }
 
         public void Delete(int id)

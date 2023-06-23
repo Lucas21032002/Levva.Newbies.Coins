@@ -16,10 +16,10 @@ namespace LevvaCoinAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CategoryDto category)
+        public ActionResult<CategoryDto> Create(createCategoryDto category)
         {
-            _CategoryService.Create(category);
-            return Created("", category);
+            var categoryCreate = _CategoryService.Create(category);
+            return Created("", categoryCreate);
         }
 
         [HttpGet]

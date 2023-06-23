@@ -12,10 +12,11 @@ namespace LevvaCoinAPI.Repositories
             _context = context;
         }
 
-        public void Create(Category category)
+        public Category Create(Category category)
         {
             _context.Category.Add(category);
             _context.SaveChanges();
+            return category;
         }
 
         public void Delete(int id)

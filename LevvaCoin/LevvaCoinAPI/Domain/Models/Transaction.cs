@@ -24,7 +24,7 @@ namespace LevvaCoinAPI.Domain.Models
         [Column("categoryId")]
         public int? CategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual Category? Category { get; set; }
 
         [Column("userId")]
         public int UserId { get; set; }

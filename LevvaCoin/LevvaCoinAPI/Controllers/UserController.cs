@@ -50,7 +50,7 @@ namespace LevvaCoinAPI.Controllers
 
         [HttpPost("login")]
         [AllowAnonymous]
-        public ActionResult<LoginDto> Login(LoginDto loginDto)
+        public ActionResult<LoginResponseDto> Login(LoginDto loginDto)
         {
             var login = _userService.Login(loginDto);
 

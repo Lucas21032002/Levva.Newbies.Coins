@@ -55,7 +55,7 @@ namespace LevvaCoinAPI.Logic.Services
             _userRepository.Update(userAtt);
         }
 
-        public LoginDto Login(LoginDto loginDto)
+        public LoginResponseDto Login(LoginDto loginDto)
         {
             var usuario = _userRepository.GetByEmailAndPassword(loginDto.Email, loginDto.Password);
 
@@ -69,20 +69,18 @@ namespace LevvaCoinAPI.Logic.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, usuario.Email)
+                    new Claim(ClaimTypes.Name, usuario.Id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
+            var loginResponse = _mapper.Map<LoginResponseDto>(usuario);
 
-            loginDto.Token = tokenHandler.WriteToken(token);
-            loginDto.Password = null;
-            loginDto.Username = usuario.Name;
-            loginDto.Email = usuario.Email;
-            loginDto.Id = usuario.Id;
+            loginResponse.Token = $"Bearer {tokenHandler.WriteToken(token)}";
+            loginResponse.Username = usuario.Name;
 
-            return loginDto;
+            return loginResponse;
 
         }
     }
